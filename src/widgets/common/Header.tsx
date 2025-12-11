@@ -4,34 +4,71 @@ import React from 'react'
 
 export default function Header() {
   return (
-    <div className='w-full py-8 px-[5vw] flex flex-row'>
-      <div className="flex-1 flex items-center justify-start gap-[4vw]">
-        {navItems?.slice(0,2).map((item,index)=>(
-          <Link key={index} href={item?.to}>{item?.title}</Link>
-        ))}
-      </div>
-      <div className="flex-[1.5] flex items-center justify-center">
-        <h1 className='font-bold text-3xl'>Sparkz '25</h1>
-      </div>
-      <div className="flex-1 flex items-center justify-end gap-[4vw]">
-        {navItems?.slice(0,2).map((item,index)=>(
-          <Link key={index} href={item?.to}>{item?.title}</Link>
-        ))}
-        <button className="
-  bg-[#D7FF00]
-  text-black 
-  font-semibold 
-  px-8 py-3 
-  inline-block
-  skew-x-[-10deg]
-">
-  <span className="inline-block skew-x-[10deg]">
-    CONTACT
-  </span>
-</button>
+    <header className="sticky top-0 z-30 w-full border-b border-white/10 bg-[#04050b]/90 backdrop-blur-lg">
+      <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_20%_0%,rgba(79,70,229,0.12),transparent_35%),radial-gradient(circle_at_80%_0%,rgba(236,72,153,0.12),transparent_35%)] opacity-60" />
+      <div className="pointer-events-none absolute inset-0 bg-[linear-gradient(120deg,rgba(79,70,229,0.1),transparent_50%),linear-gradient(240deg,rgba(236,72,153,0.1),transparent_50%)]" />
+      <div className="pointer-events-none absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-white/30 to-transparent" />
+      <div className="relative mx-auto flex max-w-6xl flex-wrap items-center justify-between gap-3 px-4 py-4 sm:flex-nowrap sm:gap-6 sm:px-6 sm:py-5">
+        {/* Left nav */}
+        <div className="hidden flex-1 items-center gap-4 text-sm text-white/80 sm:flex sm:gap-6">
+          {navItems?.slice(0, 2).map((item, index) => (
+            <Link
+              key={index}
+              href={item?.to}
+              className="rounded-full border border-transparent px-3 py-2 transition hover:border-white/20 hover:bg-white/5 hover:text-white"
+            >
+              {item?.title}
+            </Link>
+          ))}
+        </div>
 
+        {/* Brand */}
+        <div className="flex flex-[1.2] items-center justify-center sm:justify-center">
+          <div className="relative flex items-center gap-3 rounded-full border border-white/10 bg-white/5 px-4 py-2 text-white/90 shadow-[0_10px_40px_rgba(79,70,229,0.25)]">
+            <span className="h-2 w-2 rounded-full bg-emerald-400 animate-pulse" />
+            <h1 className="text-2xl font-bold tracking-tight">
+              Sparkz <span className="text-transparent bg-clip-text bg-gradient-to-r from-indigo-300 via-fuchsia-300 to-amber-200 animate-[pulse_7s_ease-in-out_infinite]">'25</span>
+            </h1>
+          </div>
+        </div>
 
+        {/* Right nav + CTA */}
+        <div className="hidden flex-1 items-center justify-end gap-4 text-sm text-white/80 sm:flex">
+          {navItems?.slice(0, 2).map((item, index) => (
+            <Link
+              key={index}
+              href={item?.to}
+              className="rounded-full border border-transparent px-3 py-2 transition hover:border-white/20 hover:bg-white/5 hover:text-white"
+            >
+              {item?.title}
+            </Link>
+          ))}
+          <button className="inline-flex items-center justify-center gap-2 rounded-full border border-white/15 bg-white/5 px-4 py-2 text-sm font-semibold text-white backdrop-blur transition hover:border-white/30 hover:bg-white/10">
+            Contact
+          </button>
+        </div>
+
+        {/* Mobile actions */}
+        <div className="flex w-full items-center justify-between gap-3 sm:hidden">
+          <div className="flex items-center gap-2 text-xs text-white/80">
+            {navItems?.slice(0, 2).map((item, index) => (
+              <Link
+                key={index}
+                href={item?.to}
+                className="rounded-full border border-white/10 px-3 py-2 transition hover:border-white/25 hover:bg-white/5 hover:text-white"
+              >
+                {item?.title}
+              </Link>
+            ))}
+          </div>
+          <button
+            className="inline-flex items-center justify-center gap-2 rounded-full border border-white/15 bg-white/5 px-3 py-2 text-xs font-semibold text-white backdrop-blur transition hover:border-white/30 hover:bg-white/10"
+            aria-label="Contact Sparkz team"
+          >
+            Contact
+          </button>
+        </div>
       </div>
-    </div>
+    </header>
   )
 }
