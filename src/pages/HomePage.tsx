@@ -1,12 +1,13 @@
-import Header from '@/widgets/common/Header'
-import Hero from '@/widgets/home/Hero'
-import React from 'react'
+import Header from "@/widgets/common/Header";
+import About from "@/widgets/home/About";
+import Hero from "@/widgets/home/Hero";
 
 export default function HomePage() {
   return (
     <div>
-        <Header/>
-        <Hero/>
+      <Header />
+      <Hero />
+      <About />
     </div>
-  )
+  );
 }
