@@ -30,7 +30,10 @@ const pillars = [
 
 export default function About() {
   return (
-    <section className="relative isolate overflow-hidden bg-[#04050b] py-20 text-white sm:py-24">
+    <section
+      id="about"
+      className="relative isolate overflow-hidden bg-[#04050b] py-20 text-white sm:py-24"
+    >
       {/* TOP = PURE BLACK (no glow at the very top) */}
       <div className="pointer-events-none absolute inset-0 bg-gradient-to-b from-[#04050b] via-transparent to-transparent h-64" />
 
@@ -90,26 +93,6 @@ export default function About() {
                 creative, and chaotic.
               </span>
             </h2>
-
-            <p className="text-lg text-white/80 max-w-xl">
-              Sparkz is SJEC’s annual 48-hour playground for builders. Robots,
-              AI, circuits, code, and pure adrenaline — all under one roof, all
-              night long.
-            </p>
-
-            <div className="grid grid-cols-2 gap-4">
-              {pillars.map((p, i) => (
-                <div
-                  key={i}
-                  className="rounded-xl border border-white/10 bg-white/5 p-5 backdrop-blur"
-                >
-                  <div className="text-[11px] uppercase tracking-widest text-white/60">
-                    {p.label}
-                  </div>
-                  <div className="mt-1 text-xl font-bold">{p.value}</div>
-                </div>
-              ))}
-            </div>
           </motion.div>
 
           {/* Right */}
@@ -140,27 +123,6 @@ export default function About() {
                     </div>
                   </div>
                 ))}
-              </div>
-            </div>
-
-            <div className="grid gap-6 sm:grid-cols-2">
-              <div className="rounded-2xl border border-white/10 bg-white/5 p-6 backdrop-blur">
-                <h4 className="text-sm uppercase tracking-widest text-white/60">
-                  Mentors & Judges
-                </h4>
-                <p className="mt-3 text-white">
-                  Real engineers & founders roaming the floor, giving instant
-                  feedback so you never get stuck.
-                </p>
-              </div>
-              <div className="rounded-2xl border border-white/10 bg-white/5 p-6 backdrop-blur">
-                <h4 className="text-sm uppercase tracking-widest text-white/60">
-                  Build + Demo
-                </h4>
-                <p className="mt-3 text-white">
-                  48 hrs → working prototype → 90-sec fire demo on main stage.
-                  No slides. Just sparks.
-                </p>
               </div>
             </div>
           </motion.div>

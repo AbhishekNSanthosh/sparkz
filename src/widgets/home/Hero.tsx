@@ -100,7 +100,7 @@ export default function Hero() {
         />
       ))}
 
-      <div className="relative mx-auto flex min-h-[92vh] max-w-6xl flex-col gap-12 px-6 py-16 md:flex-row md:items-center md:gap-10">
+      <div className="relative mx-auto flex min-h-[92vh] max-w-6xl flex-col gap-12 px-6 pb-24 md:flex-row md:items-center md:gap-10">
         {/* Left content */}
         <motion.div
           initial={{ opacity: 0, x: -24 }}
@@ -110,36 +110,38 @@ export default function Hero() {
           className="order-2 w-full max-w-3xl space-y-6 text-center md:order-1 md:w-1/2 md:text-left"
         >
           <motion.div
-            initial={{ opacity: 0, scale: 0.96 }}
-            whileInView={{ opacity: 1, scale: 1 }}
-            viewport={{ once: true, amount: 0.6 }}
-            transition={{ duration: 0.7, ease: "easeOut" }}
-            className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-4 py-2 text-[10px] font-semibold uppercase tracking-[0.18em] text-white/80 backdrop-blur"
-          >
-            <span className="h-2 w-2 rounded-full bg-emerald-400 animate-pulse" />
-            Sparkz '25 • CCET Tech Fest
-          </motion.div>
+  initial={{ opacity: 0, scale: 0.96 }}
+  whileInView={{ opacity: 1, scale: 1 }}
+  viewport={{ once: true, amount: 0.6 }}
+  transition={{ duration: 0.7, ease: "easeOut" }}
+  className="inline-flex items-center text-center gap-2 rounded-full border border-white/10 bg-white/5 px-2.5 py-3 text-[10px] font-semibold uppercase tracking-[0.18em] text-white/80 backdrop-blur"
+>
+  Carmel College of Engineering and Technology presents
+</motion.div>
+
+{/* NEW: Spark the date badge! 🔥 */}
+<motion.div
+  initial={{ opacity: 0, y: 10 }}
+  whileInView={{ opacity: 1, y: 0 }}
+  viewport={{ once: true }}
+  transition={{ duration: 0.8, ease: "easeOut", delay: 0.2 }}
+  className="mx-auto md:mx-0 inline-flex items-center gap-3 rounded-full border border-cyan-300/30 bg-cyan-500/10 px-5 py-3 text-xs font-bold text-cyan-200 backdrop-blur-sm"
+>
+  <span className="h-3 w-3 rounded-full bg-cyan-400 animate-ping" />
+  <span>January 16 - 17, 2026</span>
+</motion.div>
 
           <motion.h1
             initial={{ opacity: 0, y: 12 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, amount: 0.5 }}
             transition={{ duration: 0.7, ease: "easeOut" }}
-            className="text-4xl font-bold leading-tight text-white drop-shadow-sm sm:text-5xl lg:text-6xl"
+            className="text-3xl font-bold leading-tight text-white drop-shadow-sm sm:text-3xl lg:text-3xl"
           >
-            Build loud. Think bold.
-            <span
-              className="relative block mt-2 text-5xl sm:text-6xl lg:text-7xl font-extrabold leading-tight text-transparent bg-clip-text bg-gradient-to-r from-indigo-500 via-fuchsia-500 to-amber-400"
-              style={{
-                textShadow: `
-                  0 0 20px rgba(236, 72, 153, 0.7),
-                  0 0 35px rgba(129, 140, 248, 0.6),
-                  0 0 50px rgba(251, 191, 36, 0.4)
-                `,
-              }}
-            >
+            <span className="relative block mt-2 text-5xl sm:text-6xl lg:text-7xl font-extrabold leading-tight text-transparent bg-clip-text bg-gradient-to-r from-indigo-500 via-fuchsia-500 to-amber-400">
               Sparkz '25
             </span>
+            Innvovation Unleashed
           </motion.h1>
 
           <motion.p
@@ -149,8 +151,7 @@ export default function Hero() {
             transition={{ duration: 0.65, ease: "easeOut", delay: 0.05 }}
             className="max-w-md text-[17px] text-white/80 sm:text-[17px]"
           >
-            Robotics, AI, circuits, code, and design — two days of prototyping,
-            playful competition, and engineering energy after dark.
+            The fest where students compete, create, and spark something big.
           </motion.p>
 
           <div className="flex flex-col items-center gap-4 sm:flex-row sm:justify-start">
@@ -160,10 +161,10 @@ export default function Hero() {
             </button>
           </div>
 
-          <div className="grid w-full max-w-2xl grid-cols-1 gap-3 text-sm sm:grid-cols-3">
+          {/* <div className="grid max-w-2xl sm:w-2.5 grid-cols-1 gap-3 text-sm sm:grid-cols-3">
             <Stat label="Engineering Tracks" value="Robotics • AI • IoT" />
             <Stat label="Prize Pool" value="₹5L+" />
-          </div>
+          </div> */}
         </motion.div>
 
         {/* Right visual */}
@@ -172,14 +173,9 @@ export default function Hero() {
           whileInView={{ opacity: 1, x: 0 }}
           viewport={{ once: true, amount: 0.35 }}
           transition={{ duration: 0.75, ease: "easeOut", delay: 0.05 }}
-          className="order-1 relative flex w-full items-center justify-center md:order-2 md:w-1/2 md:-mt-6 lg:-mt-60"
+          className="order-1 relative flex w-full items-center justify-center md:order-2 md:w-1/2 md:-mt-6"
         >
           <div className="relative h-56 w-56 sm:h-64 sm:w-64">
-            {/* Rotating dashed ring removed */}
-            {/* Decorative gradient layers removed */}
-
-            {/* KEEP: subtle animated halo removed (no circular bg) */}
-            {/* TECH PARTICLES & FLOATING ATOMS AROUND THE LOGO */}
             {mounted &&
               particles.map((p) => {
                 const angleRad = (p.angle * Math.PI) / 180;
@@ -243,13 +239,13 @@ export default function Hero() {
   );
 }
 
-function Stat({ label, value }: { label: string; value: string }) {
-  return (
-    <div className="flex flex-col gap-1 rounded-xl border border-white/10 bg-white/5 px-3 py-2 text-left backdrop-blur">
-      <span className="text-[11px] uppercase tracking-[0.18em] text-white/60">
-        {label}
-      </span>
-      <span className="text-base font-semibold text-white">{value}</span>
-    </div>
-  );
-}
+// function Stat({ label, value }: { label: string; value: string }) {
+//   return (
+//     <div className="flex flex-col gap-1 rounded-xl border border-white/10 bg-white/5 px-3 py-2 text-left backdrop-blur">
+//       <span className="text-[11px] uppercase tracking-[0.18em] text-white/60">
+//         {label}
+//       </span>
+//       <span className="text-base font-semibold text-white">{value}</span>
+//     </div>
+//   );
+// }
