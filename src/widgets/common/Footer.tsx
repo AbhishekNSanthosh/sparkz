@@ -95,13 +95,11 @@ export default function Footer() {
               {/* Instagram */}
               <Link
                 href="#"
-                className="group inline-flex items-center gap-2 rounded-full px-3 py-2 
-               text-white/80 transition-all hover:text-[#E4405F] hover:scale-110
-               focus:outline-none focus-visible:ring-2 focus-visible:ring-fuchsia-400/40"
+                className="group inline-flex items-center gap-2 rounded-full px-3 py-2 text-white/80 transition-all hover:text-[#E4405F] hover:scale-110 focus:outline-none focus-visible:ring-2 focus-visible:ring-fuchsia-400/40"
                 aria-label="Instagram"
               >
                 <FaInstagram
-                  className="h-7 w-7 transition-colors"
+                  className="h-6 w-6 transition-colors"
                   aria-hidden
                 />
                 <span className="sr-only">Instagram</span>
@@ -110,24 +108,20 @@ export default function Footer() {
               {/* LinkedIn */}
               <Link
                 href="#"
-                className="group inline-flex items-center gap-2 rounded-full px-3 py-2 
-               text-white/80 transition-all hover:text-[#0A66C2] hover:scale-110
-               focus:outline-none focus-visible:ring-2 focus-visible:ring-cyan-400/40"
+                className="group inline-flex items-center gap-2 rounded-full px-3 py-2 text-white/80 transition-all hover:text-[#0A66C2] hover:scale-110 focus:outline-none focus-visible:ring-2 focus-visible:ring-cyan-400/40"
                 aria-label="LinkedIn"
               >
-                <FaLinkedin className="h-7 w-7 transition-colors" aria-hidden />
+                <FaLinkedin className="h-6 w-6 transition-colors" aria-hidden />
                 <span className="sr-only">LinkedIn</span>
               </Link>
 
               {/* X / Twitter */}
               <Link
                 href="#"
-                className="group inline-flex items-center gap-2 rounded-full px-3 py-2 
-               text-white/80 transition-all hover:scale-110
-               focus:outline-none focus-visible:ring-2 focus-visible:ring-sky-400/40"
+                className="group inline-flex items-center gap-2 rounded-full px-3 py-2 text-white/80 transition-all hover:scale-110 focus:outline-none focus-visible:ring-2 focus-visible:ring-sky-400/40"
                 aria-label="Twitter"
               >
-                <FaXTwitter className="h-7 w-7 transition-colors" aria-hidden />
+                <FaXTwitter className="h-6 w-6 transition-colors" aria-hidden />
                 <span className="sr-only">X</span>
               </Link>
             </div>
