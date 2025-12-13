@@ -4,16 +4,16 @@ export const navItems = [
         to:"/"
     },
     {
-        title:"About",
-        to:"/"
+        title: "Events",
+        to: "/events"
     },
     {
-        title:"Events",
-        to:"/"
+        title: "About",
+        to: "/about"
     },
     {
         title:"Contact",
-        to:"/"
+        to: "/contact"
     },
     
 ]

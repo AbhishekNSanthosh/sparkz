@@ -6,10 +6,10 @@ import Footer from "@/widgets/common/Footer";
 export default function HomePage() {
   return (
     <div>
-      <Header />
+      
       <Hero />
       <About />
-      <Footer />
+      
     </div>
   );
 }

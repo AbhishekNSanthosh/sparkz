@@ -145,7 +145,7 @@ export default function Footer() {
                   href="#register"
                   className="inline-flex items-center gap-2 rounded-full bg-gradient-to-r from-indigo-500 via-fuchsia-500 to-amber-400 px-5 py-2.5 text-sm font-bold text-white shadow-lg transition-transform focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-amber-400/40"
                 >
-                  Register Now →
+                  Join Now →
                 </Link>
               </motion.div>
             </div>

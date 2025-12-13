@@ -1,7 +1,8 @@
 "use client";
 
 import Image from "next/image";
-import React, { useEffect, useMemo, useState } from "react";
+import Link from "next/link";
+import { useEffect, useMemo, useState } from "react";
 import { motion } from "framer-motion";
 
 export default function Hero() {
@@ -155,10 +156,13 @@ export default function Hero() {
           </motion.p>
 
           <div className="flex flex-col items-center gap-4 sm:flex-row sm:justify-start">
-            <button className="group text-[14px] inline-flex items-center justify-center gap-2 rounded-full bg-gradient-to-r from-indigo-500 via-fuchsia-500 to-amber-400 px-6 py-3 text-base font-semibold text-white shadow-[0_20px_80px_rgba(99,102,241,0.35)] transition hover:scale-[1.02] hover:shadow-[0_20px_90px_rgba(236,72,153,0.45)]">
-              Register Now
+            <Link
+              href="/events"
+              className="group text-[14px] inline-flex items-center justify-center gap-2 rounded-full bg-gradient-to-r from-indigo-500 via-fuchsia-500 to-amber-400 px-6 py-3 text-base font-semibold text-white shadow-[0_20px_80px_rgba(99,102,241,0.35)] transition hover:scale-[1.02] hover:shadow-[0_20px_90px_rgba(236,72,153,0.45)]"
+            >
+              Join Now
               <span className="transition group-hover:translate-x-1">→</span>
-            </button>
+            </Link>
           </div>
 
           {/* <div className="grid max-w-2xl sm:w-2.5 grid-cols-1 gap-3 text-sm sm:grid-cols-3">
