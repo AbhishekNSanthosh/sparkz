@@ -102,21 +102,21 @@ export default function Hero() {
         />
       ))}
 
-      <div className="relative mx-auto flex min-h-[92vh] max-w-6xl flex-col gap-12 px-6 pb-24 md:flex-row md:items-center md:gap-10">
+      <div className="relative mx-5 sm:mx-auto flex min-h-[92vh] max-w-6xl flex-col gap-12 pt-10 sm:px-6 pb-15 sm:pb-24 md:flex-row md:items-center md:gap-10">
         {/* Left content */}
         <motion.div
           initial={{ opacity: 0, x: -24 }}
           whileInView={{ opacity: 1, x: 0 }}
           viewport={{ once: true, amount: 0.35 }}
           transition={{ duration: 0.75, ease: "easeOut" }}
-          className="order-2 w-full max-w-3xl space-y-6 text-center md:order-1 md:w-1/2 md:text-left"
+          className="order-2 w-full sm:max-w-3xl space-y-6 text-center md:order-1 md:w-1/2 md:text-left"
         >
           <motion.div
             initial={{ opacity: 0, scale: 0.96 }}
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true, amount: 0.6 }}
             transition={{ duration: 0.7, ease: "easeOut" }}
-            className="inline-flex items-center text-center gap-2 rounded-full border border-white/10 bg-white/5 px-2.5 py-3 text-[10px] font-semibold uppercase tracking-[0.18em] text-white/80 backdrop-blur"
+            className="inline-flex items-center text-center gap-2 rounded-full border border-white/10 bg-white/5 px-2.5 py-2.5 text-[10px] font-semibold uppercase tracking-[0.18em] text-white/80 backdrop-blur"
           >
             Carmel College of Engineering and Technology presents
           </motion.div>
@@ -129,7 +129,7 @@ export default function Hero() {
             transition={{ duration: 0.8, ease: "easeOut", delay: 0.2 }}
             className="mx-auto md:mx-0 inline-flex items-center gap-3 rounded-full border border-cyan-300/30 bg-cyan-500/10 px-5 py-3 text-xs font-bold text-cyan-200 backdrop-blur-sm"
           >
-            <span className="h-3 w-3 rounded-full bg-cyan-400 animate-ping" />
+            <span className="h-1 w-1 sm:h-3 sm:w-3 rounded-full bg-cyan-400 animate-ping" />
             <span>January 16 - 17, 2026</span>
           </motion.div>
 
@@ -140,7 +140,7 @@ export default function Hero() {
             transition={{ duration: 0.7, ease: "easeOut" }}
             className="text-3xl font-bold leading-tight text-white drop-shadow-sm sm:text-3xl lg:text-3xl"
           >
-            <span className="relative block mt-2 text-7xl sm:text-6xl lg:text-7xl font-extrabold   text-transparent bg-clip-text bg-gradient-to-r from-indigo-500 via-fuchsia-500 to-amber-400">
+            <span className="relative block mt-2 text-6xl sm:text-4xl lg:text-7xl font-extrabold   text-transparent bg-clip-text bg-gradient-to-r from-indigo-500 via-fuchsia-500 to-amber-400">
               Sparkz &apos;25
             </span>
             Innvovation Unleashed
@@ -180,7 +180,7 @@ export default function Hero() {
           transition={{ duration: 0.75, ease: "easeOut", delay: 0.05 }}
           className="order-1 relative flex w-full items-center justify-center md:order-2 md:w-1/2 md:-mt-6"
         >
-          <div className="relative h-56 w-56 sm:h-64 sm:w-64">
+          <div className="relative pl-5 h-46 w-46 sm:h-74 sm:w-74">
             {mounted &&
               particles.map((p) => {
                 const angleRad = (p.angle * Math.PI) / 180;
@@ -235,7 +235,6 @@ export default function Hero() {
                 fill
                 priority
                 className="object-contain drop-shadow-[0_14px_36px_rgba(236,72,153,0.35)]"
-                sizes="256px"
               />
             </motion.div>
           </div>

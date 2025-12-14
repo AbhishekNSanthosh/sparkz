@@ -23,7 +23,7 @@ export default function FeaturedEvents({ events }: { events: Event[] }) {
   const sectionRef = useRef<HTMLElement | null>(null);
 
   const isInView = useInView(sectionRef, {
-    amount: 0.4, // at least 40% visible
+    amount: 0.1, // at least 10% visible
     margin: "-80px",
   });
 
@@ -34,7 +34,7 @@ export default function FeaturedEvents({ events }: { events: Event[] }) {
 
     const interval = setInterval(() => {
       setActive((i) => getIndex(i + 1));
-    }, 4000);
+    }, 3250);
 
     return () => clearInterval(interval);
   }, [shouldPause, total]);
@@ -55,7 +55,7 @@ export default function FeaturedEvents({ events }: { events: Event[] }) {
 
   return (
     <section
-      className="relative isolate overflow-hidden bg-[#04050b] py-15"
+      className="relative isolate overflow-hidden bg-[#04050b] py-10 sm:py-15 "
       ref={sectionRef}
     >
       {/* Matching Hero ambient effects */}
@@ -72,7 +72,7 @@ export default function FeaturedEvents({ events }: { events: Event[] }) {
           className="mb-16 text-center text-4xl font-bold leading-tight sm:text-5xl"
         >
           Featured{" "}
-          <span className="bg-gradient-to-r from-indigo-300 via-fuchsia-300 to-amber-200 bg-clip-text text-transparent animate-[pulse_6s_ease-in-out_infinite]">
+          <span className="bg-linear-to-r from-indigo-300 via-fuchsia-300 to-amber-200 bg-clip-text text-transparent animate-[pulse_6s_ease-in-out_infinite]">
             Events
           </span>
         </motion.h2>
@@ -86,11 +86,11 @@ export default function FeaturedEvents({ events }: { events: Event[] }) {
                   key={event.id}
                   drag="x"
                   dragConstraints={{ left: 0, right: 0 }}
-                  dragElastic={0.2}
+                  dragElastic={1}
                   onDragEnd={(_, info) => {
                     handleSwipe(info.offset.x);
                     setPaused(true);
-                    setTimeout(() => setPaused(false), 1000);
+                    setTimeout(() => setPaused(false), 100);
                   }}
                   whileTap={{ scale: 0.97 }}
                   layout

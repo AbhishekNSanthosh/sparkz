@@ -8,16 +8,16 @@ const accentGradient =
 
 const aboutPoints = [
   {
-    title: "Built for makers",
-    body: "Hands-on challenges in robotics, AI, embedded, design, and full-stack that push rapid prototyping.",
+    title: "Skill Development & Application",
+    body: "Hands-on workshops and competitions turn theory into practice, building technical, organizational, and soft skills.",
   },
   {
-    title: "Community-driven",
-    body: "Mentors, alumni, and industry partners on-site to review builds, share playbooks, and unblock teams fast.",
+    title: "Fostering Innovation",
+    body: "Students innovate, prototype, and showcase visionary ideas in this incubator for future-ready talent.",
   },
   {
-    title: "Night labs energy",
-    body: "48 hours of late-night labs, live showcases, and music so teams can iterate, test, and ship under the lights.",
+    title: "Networking & Exposure",
+    body: "Home to a national techfest that builds prestige, creates invaluable networking, and exposes participants to the forefront of technology.",
   },
 ];
 
@@ -86,11 +86,11 @@ export default function About() {
               About Sparkz
             </div>
 
-            <h2 className="text-4xl font-black leading-tight sm:text-5xl lg:text-6xl">
-              Where engineering gets loud,
+            <h2 className="text-4xl font-black pt-5 sm:py-10 leading-tight sm:text-5xl lg:text-6xl">
+              Ignite the
               <br />
               <span className="bg-gradient-to-r from-indigo-300 via-fuchsia-300 to-amber-200 bg-clip-text text-transparent">
-                creative, and chaotic.
+                spark within you
               </span>
             </h2>
           </motion.div>
@@ -108,7 +108,7 @@ export default function About() {
                 className={`px-6 py-4 ${accentGradient} border-b border-white/10`}
               >
                 <div className="text-sm font-bold uppercase tracking-widest text-white/80">
-                  Why Sparkz Hits Different
+                  Why is &quot;Sparkz&quot; Essential?
                 </div>
               </div>
               <div className="divide-y divide-white/10">
