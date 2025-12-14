@@ -25,7 +25,7 @@ export default function Header() {
         <div className="flex flex-[1.2] items-center justify-center sm:justify-center">
           <div className="relative flex items-center gap-3 rounded-full border border-white/10 bg-white/5 px-4 py-2 text-white/90 shadow-[0_10px_40px_rgba(79,70,229,0.25)]">
             <span className="h-2 w-2 rounded-full bg-emerald-400 animate-pulse" />
-            <h1 className="text-xl font-bold tracking-tight">
+            <h1 className="text-xl font-bold">
               Sparkz{" "}
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-indigo-300 via-fuchsia-300 to-amber-200 animate-[pulse_7s_ease-in-out_infinite]">
                 &apos;25

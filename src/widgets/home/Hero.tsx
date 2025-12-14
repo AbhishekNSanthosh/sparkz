@@ -140,7 +140,7 @@ export default function Hero() {
             transition={{ duration: 0.7, ease: "easeOut" }}
             className="text-3xl font-bold leading-tight text-white drop-shadow-sm sm:text-3xl lg:text-3xl"
           >
-            <span className="relative block mt-2 text-7xl sm:text-6xl lg:text-7xl font-extrabold leading-tight text-transparent bg-clip-text bg-gradient-to-r from-indigo-500 via-fuchsia-500 to-amber-400">
+            <span className="relative block mt-2 text-7xl sm:text-6xl lg:text-7xl font-extrabold   text-transparent bg-clip-text bg-gradient-to-r from-indigo-500 via-fuchsia-500 to-amber-400">
               Sparkz &apos;25
             </span>
             Innvovation Unleashed
