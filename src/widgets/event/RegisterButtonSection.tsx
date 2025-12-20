@@ -115,10 +115,10 @@ const RegisterButtonSection: React.FC<Props> = ({ eventId }) => {
               <div className="space-y-4">
                 <Link
                   href={`./${eventId}/register`}
-                  className="group relative flex items-center justify-center gap-3 w-full rounded-xl bg-linear-to-r from-indigo-600 via-fuchsia-600 to-amber-500 p-4 transition-all duration-300 hover:scale-[1.02] hover:shadow-[0_0_2rem_-0.5rem_#4f46e5]"
+                  className="group opacity-50 pointer-events-none relative flex items-center justify-center gap-3 w-full rounded-xl bg-linear-to-r from-indigo-600 via-fuchsia-600 to-amber-500 p-4 transition-all duration-300 hover:scale-[1.02] hover:shadow-[0_0_2rem_-0.5rem_#4f46e5]"
                 >
                   <span className="text-lg font-bold text-white">
-                    Register Now
+                    Starting Soon
                   </span>
                   <FaArrowRight className="text-white transition-transform duration-300 group-hover:translate-x-1" />
                 </Link>

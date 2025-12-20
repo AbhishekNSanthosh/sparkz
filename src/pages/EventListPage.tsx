@@ -1,7 +1,7 @@
 "use client";
 
 import Image, { ImageLoaderProps } from "next/image";
-import { useMemo, useState } from "react";
+import { Suspense, useMemo, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import Link from "next/link";
 import Particles from "@/widgets/common/Particles";
@@ -15,11 +15,7 @@ const loader = ({ src, width, quality }: ImageLoaderProps) => {
 export default function EventsPage() {
   const [selectedDept, setSelectedDept] = useState<string>("All");
 
-  const filteredEvents = useMemo(
-    () =>
-      eventsData,
-    [selectedDept]
-  );
+  const filteredEvents = useMemo(() => eventsData, [selectedDept]);
 
   return (
     <section className="relative isolate overflow-hidden bg-[#04050b] text-white min-h-screen py-20">
@@ -82,46 +78,52 @@ export default function EventsPage() {
         </motion.header>
 
         {/* Events grid */}
-        <motion.div
-          layout
-          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8"
+        <Suspense
+          fallback={<div className="h-8 w-full bg-white/10 rounded-lg"></div>}
         >
-          <AnimatePresence>
-            {filteredEvents.map((event, idx) => (
-              <motion.div
-                key={event.id}
-                layout
-                initial={{ opacity: 0, y: 16 }}
-                animate={{ opacity: 1, y: 0 }}
-                exit={{ opacity: 0, y: -12 }}
-                transition={{
-                  duration: 0.28,
-                  ease: [0.16, 1, 0.3, 1],
-                  delay: idx * 0.03,
-                }}
-                whileHover={{ y: -6 }}
-                className="group"
-              >
-                <Link
-                  href={`/events/${event.id}`}
-                  className="block rounded-2xl max-w-90 border border-white/10 bg-black/40 backdrop-blur transition-all duration-300hover:border-fuchsia-400/40 hover:shadow-lg hover:shadow-fuchsia-500/15"
+          <motion.div
+            layout
+            className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8"
+          >
+            <AnimatePresence>
+              {filteredEvents.map((event, idx) => (
+                <motion.div
+                  key={event.id}
+                  layout
+                  initial={{ opacity: 0, y: 16 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  exit={{ opacity: 0, y: -12 }}
+                  transition={{
+                    duration: 0.28,
+                    ease: [0.16, 1, 0.3, 1],
+                    delay: idx * 0.03,
+                  }}
+                  whileHover={{ y: -6 }}
+                  className="group"
                 >
-                  {/* Poster frame */}
-                  <div className="relative aspect-3/4 w-full rounded-2xl overflow-hidden bg-black">
-                    <Image
-                      src={event.image}
-                      alt={event.title}
-                      loader={loader}
-                      fill
-                      className="object-contain transition-transform duration-500"
-                      priority={idx < 3}
-                    />
-                  </div>
-                </Link>
-              </motion.div>
-            ))}
-          </AnimatePresence>
-        </motion.div>
+                  <Link
+                    href={`/events/${event.id}`}
+                    className="block rounded-2xl max-w-90 border border-white/10 bg-black/40 backdrop-blur transition-all duration-300hover:border-fuchsia-400/40 hover:shadow-lg hover:shadow-fuchsia-500/15"
+                  >
+                    {/* Poster frame */}
+                    <div className="relative aspect-4/5 w-full rounded-2xl overflow-hidden bg-black">
+                      <Image
+                        src={event.image}
+                        alt={event.title}
+                        loader={loader}
+                        fill
+                        sizes="(100vw - 2rem) / 3 * 100vw / 100vw"
+                        quality={75}
+                        className="object-contain  rounded-2xl transition-transform duration-500"
+                        priority={idx < 3}
+                      />
+                    </div>
+                  </Link>
+                </motion.div>
+              ))}
+            </AnimatePresence>
+          </motion.div>
+        </Suspense>
 
         {/* Decorative particles near header (subtle, not full-screen) */}
         <Particles />
